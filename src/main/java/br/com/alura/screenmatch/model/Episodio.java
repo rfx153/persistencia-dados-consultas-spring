@@ -9,11 +9,13 @@ public class Episodio {
     private Integer numeroEpisodio;
     private Double avaliacao;
     private LocalDate dataLancamento;
+    private String sinopse;
 
     public Episodio(Integer numeroTemporada, DadosEpisodio dadosEpisodio) {
         this.temporada = numeroTemporada;
         this.titulo = dadosEpisodio.titulo();
         this.numeroEpisodio = dadosEpisodio.numero();
+        this.sinopse = dadosEpisodio.sinopse();
 
         try {
             this.avaliacao = Double.valueOf(dadosEpisodio.avaliacao());
@@ -67,6 +69,13 @@ public class Episodio {
     public void setDataLancamento(LocalDate dataLancamento) {
         this.dataLancamento = dataLancamento;
     }
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
 
     @Override
     public String toString() {
@@ -74,6 +83,7 @@ public class Episodio {
                 ", titulo='" + titulo + '\'' +
                 ", numeroEpisodio=" + numeroEpisodio +
                 ", avaliacao=" + avaliacao +
-                ", dataLancamento=" + dataLancamento ;
+                ", dataLancamento=" + dataLancamento; //+
+               // "sinopse=" + sinopse;
     }
 }
