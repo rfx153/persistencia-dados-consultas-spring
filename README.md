@@ -15,3 +15,7 @@ Projeto desenvolvido no segundo curso da formação Avançando com Java da Alura
 
 | ![Fluxo principal da aplicacao](https://raw.githubusercontent.com/rfx153/persistencia-dados-consultas-spring/refs/heads/main/plantumlscripts/fluxo%20principal.png) |
 |:--:|
+
+# Criação de fluxos em plantuml
+
+https://plantuml.com/
