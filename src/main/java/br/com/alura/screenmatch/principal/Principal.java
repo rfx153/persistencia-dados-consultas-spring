@@ -63,7 +63,13 @@ public class Principal {
     private void buscarSerieWeb() {
         DadosSerie dados = getDadosSerie();
         dadosSeries.add(dados);
-        System.out.println(dados);
+        List<Serie> exibirSerieTraduzida = new ArrayList<>();
+        exibirSerieTraduzida = dadosSeries.stream()
+                .map(d -> new Serie(d))
+                .collect(Collectors.toList());
+        exibirSerieTraduzida.stream()
+                .sorted(Comparator.comparing(Serie::getSinopse))
+                .forEach(System.out::println);
     }
 
     private DadosSerie getDadosSerie() {
