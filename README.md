@@ -17,4 +17,4 @@ Projeto desenvolvido no segundo curso da formação Avançando com Java da Alura
 - Aprofundar na interface JPARepository
 
 #fluxo principal da aplicação 
-https://raw.githubusercontent.com/rfx153/persistencia-dados-consultas-spring/refs/heads/main/plantumlscripts/fluxo%20principal.png
+![Programação-Formação Java](https://raw.githubusercontent.com/rfx153/persistencia-dados-consultas-spring/refs/heads/main/plantumlscripts/fluxo%20principal.png)
