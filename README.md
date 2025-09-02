@@ -15,3 +15,6 @@ Projeto desenvolvido no segundo curso da formação Avançando com Java da Alura
 - Conhecer vários tipos de banco de dados e utilizar o PostgreSQL;
 - Trabalhar com vários tipos de consultas ao banco de dados;
 - Aprofundar na interface JPARepository
+
+#fluxo principal da aplicação 
+https://raw.githubusercontent.com/rfx153/persistencia-dados-consultas-spring/refs/heads/main/plantumlscripts/fluxo%20principal.png
