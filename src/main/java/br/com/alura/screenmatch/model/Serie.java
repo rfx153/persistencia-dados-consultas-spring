@@ -35,6 +35,8 @@ public class Serie {
     @OneToMany(mappedBy = "serie")
     private List<Episodio> episodios = new ArrayList<>();
 
+    
+
     public Serie() {}
 
     public Serie(DadosSerie dadosSerie){
@@ -103,6 +105,22 @@ public class Serie {
     public void setPoster(String poster) {
         this.poster = poster;
     }
+    public List<Episodio> getEpisodios() {
+        return episodios;
+    }
+
+    public void setEpisodios(List<Episodio> episodios) {
+        this.episodios = episodios;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 
     @Override
     public String toString() {
