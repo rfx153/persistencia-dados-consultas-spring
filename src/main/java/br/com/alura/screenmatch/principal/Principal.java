@@ -1,5 +1,12 @@
 package br.com.alura.screenmatch.principal;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
 import br.com.alura.screenmatch.model.Categoria;
 import br.com.alura.screenmatch.model.DadosSerie;
 import br.com.alura.screenmatch.model.DadosTemporada;
@@ -8,17 +15,6 @@ import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.repository.SerieRepository;
 import br.com.alura.screenmatch.service.ConsumoApi;
 import br.com.alura.screenmatch.service.ConverteDados;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.DoubleSummaryStatistics;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class Principal {
 
@@ -52,6 +48,7 @@ public class Principal {
                 5 - Buscar séries por ator 
                 6 - Buscar top 5 séries
                 7 - Buscar séries por categoria
+                8 - Buscar séries por avaliação e total de temporadas
                 0 - Sair                                 
                 """;
 
@@ -84,6 +81,9 @@ public class Principal {
             case 7:
                 buscarSeriesPorCategoria();
                 break;
+             case 8:
+               filtrarSeriesPorTemporadaEAvaliacao();
+                break;    
             case 0:
                 System.out.println("Saindo...");
                 break;
@@ -201,6 +201,19 @@ public class Principal {
 
     }
 
+     private void filtrarSeriesPorTemporadaEAvaliacao(){
+        System.out.println("Filtrar séries até quantas temporadas? ");
+        var totalTemporadas = leitura.nextInt();
+        leitura.nextLine();
+        System.out.println("Com avaliação a partir de que valor? ");
+        var avaliacao = leitura.nextDouble();
+        leitura.nextLine();
+        //List<Serie> filtroSeries = repositorio.findByTotalTemporadasLessThanEqualAndAvaliacaoGreaterThanEqual(totalTemporadas, avaliacao);
+        List<Serie> filtroSeries = repositorio.seriesPorTemporadaEAvaliacao(totalTemporadas, avaliacao);
+        System.out.println("*** Séries filtradas ***");
+        filtroSeries.forEach(s ->
+                System.out.println(s.getTitulo() + "  - avaliação: " + s.getAvaliacao()));
+    }
 
 
     //private void buscar
